@@ -19,5 +19,16 @@ function updateList(){
 
 }
 
+function saveToList(){
+    var user_input = document.getElementById('coupon_title').value;
+    console.log(user_input)
+
+    var itemNode = document.createElement("LI");
+    itemNode.innerHTML = user_input 
+    // The above is the same as writing <li>Item 1</li>
+
+    coupons_list.appendChild(itemNode)
+}
+
 window.onload = updateList();
 

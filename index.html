@@ -14,7 +14,12 @@
             
         </ol>
 
-        
+        <!-- HTML assumes that any form submission will trigger page navigation or redirect -->
+        <form>
+            <label>Coupon Title</label>
+            <input type='text' id='coupon_title' name='coupon_title' />
+            <button type='button' onClick='saveToList()'>Save to List</button>
+        </form>
 
     </body>
     <script src="scripts.js"></script>
