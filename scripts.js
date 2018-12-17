@@ -9,7 +9,14 @@ function saveToList(){
     itemNode.appendChild(textNode)
     // The above is the same as writing <li>Item 1</li>
 
-    
+    //Create a button to edit item
+    var editButtonNode = document.createElement('button');
+    editButtonNode.innerHTML = 'Edit'
+    //Add a click event handler
+    editButtonNode.addEventListener('click', function(e){
+        editItem(textNode)
+        e.stopPropagation()
+    })
 
     //Create a button to delete item
     var deleteNode = document.createElement('button');
@@ -27,7 +34,14 @@ function saveToList(){
     user_input.value = ''
 }
 
+var editItem = function(node){
 
+    var result = prompt("Please enter your name", node.innerHTML);
+    if(result){
+        node.innerHTML = result
+    }
+    
+}
 
 function removeItem(node){
 
