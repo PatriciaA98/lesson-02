@@ -1,34 +1,41 @@
-function updateList(){
-
-    var coupons_list = document.getElementById('coupons_list');
-
-    console.log(coupons_list)
-
-    // For loops have 3 conditions: a starting condition,termination condition and incrementing condition 
-
-    for(var x = 1; x < 4; x++){
-
-        var itemNode = document.createElement("LI");
-        itemNode.innerHTML = 'Item ' + x //Concatenating two elements
-        // The above is the same as writing <li>Item 1</li>
-
-        coupons_list.appendChild(itemNode)
-
-    }
-
-
-}
 
 function saveToList(){
-    var user_input = document.getElementById('coupon_title').value;
-    console.log(user_input)
+    var user_input = document.getElementById('coupon_title');
 
+    //Create list item
     var itemNode = document.createElement("LI");
-    itemNode.innerHTML = user_input 
+    var textNode = document.createElement('span')
+    textNode.innerHTML = user_input.value
+    itemNode.appendChild(textNode)
     // The above is the same as writing <li>Item 1</li>
 
+    
+
+    //Create a button to delete item
+    var deleteNode = document.createElement('button');
+    deleteNode.innerHTML = 'Delete'
+    deleteNode.addEventListener('click',function(e){
+        removeItem(itemNode)
+        e.stopPropagation()
+      })
+    itemNode.appendChild(deleteNode);
+
+    //Add to the list
     coupons_list.appendChild(itemNode)
+    
+    //Clear input field
+    user_input.value = ''
 }
 
-window.onload = updateList();
+
+
+function removeItem(node){
+
+    var lis = document.getElementById('coupons_list');
+    if (confirm("Are you sure?")) {
+        lis.removeChild(node);
+    } 
+
+}
+
 
