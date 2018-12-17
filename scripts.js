@@ -17,6 +17,7 @@ function saveToList(){
         editItem(textNode)
         e.stopPropagation()
     })
+    itemNode.appendChild(editButtonNode);
 
     //Create a button to delete item
     var deleteNode = document.createElement('button');
