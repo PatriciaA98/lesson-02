@@ -6,7 +6,7 @@ function updateList(){
 
     // For loops have 3 conditions: a starting condition,termination condition and incrementing condition 
 
-    for(var x = 1; x < 4; x++){
+    for(var x = 1; x < 1; x++){
 
         var itemNode = document.createElement("LI");
         itemNode.innerHTML = 'Item ' + x //Concatenating two elements
