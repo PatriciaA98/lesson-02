@@ -32,3 +32,5 @@ function saveToList(){
 
 window.onload = updateList();
 
+//Comment out window.onload to remove the list from 1 to 3 int hte for loop
+
